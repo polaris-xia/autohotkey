@@ -17,11 +17,11 @@ winApp()
 }
 
 !j::SendPlay {Left}
-!k::SendPlay {Down}
+!K::SendPlay {Down}
 !l::SendPlay {Right}
 !i::SendPlay {Up}
-!,::SendPlay {PgUp}
-!.::SendPlay {PgDn}
+
+;; Move backward word
 !u::
 if winApp()
 {
@@ -30,7 +30,14 @@ if winApp()
 	SendPlay !b
 }
 Return
+!b::
+if winApp()
+{
+	SendPlay ^{Left}
+}
+Return
 
+;; Move forward word
 !o::
 if winApp()
 {
@@ -39,7 +46,14 @@ if winApp()
 	SendPlay !f
 }
 Return
+!f::
+if winApp()
+{
+	SendPlay ^{Right}
+}
+Return
 
+;; Move to beginning of line
 !h::
 if winApp()
 {
@@ -48,7 +62,14 @@ if winApp()
 	SendPlay ^a^a
 }
 Return
+^a::
+if winApp()
+{
+	SendPlay {Home}
+}
+Return
 
+;; Move to end of line
 !'::
 if winApp()
 {
@@ -58,10 +79,18 @@ if winApp()
 	SendPlay ^e
 }
 Return
+^e::
+if winApp()
+{
+	SendPlay {End}
+}
+Return
 
 !7::SendPlay {BS}
 !9::SendPlay {Del}
-!y::
+
+;; Backward delete word
+!e::
 if winApp()
 {
 	SendPlay ^{BS}
@@ -70,14 +99,18 @@ if winApp()
 	SendPlay !{BS}
 }
 Return
+!BS::
+if winApp()
+{
+	SendPlay ^{BS}
+}
+Return
 
-!p::
+;; Forward delete word
+!d::
 if winApp()
 {
 	SendPlay ^{Del}
-} else
-{
-	SendPlay !d
 }
 Return
 
@@ -107,7 +140,7 @@ if winApp()
 	SendPlay ^+{Tab}
 } else
 {
-	SendPlay !n
+	SendPlay ^ap
 }
 Return
 
@@ -117,12 +150,9 @@ if winApp()
 	SendPlay ^{Tab}
 } else
 {
-	SendPlay !m
+	SendPlay ^an
 }
 Return
-
-![::SendPlay ^ap
-!]::SendPlay ^an
 
 Alt & Space::SendPlay ^@
 AppsKey & n::WinActivate, VNC Viewer
@@ -160,4 +190,3 @@ Return
 #f::SendPlay ^f
 
 #Space::SendPlay ^{Space}
-^;::F5
