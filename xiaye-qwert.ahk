@@ -190,3 +190,5 @@ Return
 #f::SendPlay ^f
 
 #Space::SendPlay ^{Space}
+
+F9::LButton
