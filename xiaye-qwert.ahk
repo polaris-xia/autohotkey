@@ -66,6 +66,8 @@ Return
 if winApp()
 {
 	SendPlay {Home}
+} else {
+	SendPlay ^a
 }
 Return
 
@@ -103,6 +105,8 @@ Return
 if winApp()
 {
 	SendPlay ^{BS}
+} else {
+	SendPlay !BS
 }
 Return
 
@@ -155,8 +159,90 @@ if winApp()
 Return
 
 Alt & Space::SendPlay ^@
-AppsKey & n::WinActivate, VNC Viewer
-AppsKey & p::WinActivate, PuTTY
+AppsKey & y::SendInput $
+AppsKey & u::SendInput [
+AppsKey & i::SendInput ]
+AppsKey & o::SendInput (
+AppsKey & p::SendInput )
+AppsKey & h::SendInput |
+AppsKey & j::SendInput -
+AppsKey & k::SendInput _
+AppsKey & l::SendInput {=}
+AppsKey & `;::SendInput {+}
+AppsKey & n::SendInput \
+AppsKey & m::SendInput {{}
+AppsKey & ,::SendInput {}}
+AppsKey & .::SendInput ``
+AppsKey & /::SendInput ~
+
+AppsKey::
+Input, next, L1, ,,,,y,u,i,o,p,h,j,k,l,`;,n,m,.,/
+if ErrorLevel = Match
+{
+	if next = y
+	{
+		SendInput $
+	} 
+	else if next = u
+	{
+		SendInput [
+	}
+	else if next = i
+	{
+		SendInput ]
+	}
+	else if next = o
+	{
+		SendInput (
+	}
+	else if next = p
+	{
+		SendInput )
+	}
+	else if next = h
+	{
+		SendInput |
+	}
+	else if next = j
+	{
+		SendInput -
+	}
+	else if next = k
+	{
+		SendInput _
+	}
+	else if next = l
+	{
+		SendInput {=}
+	}
+	else if next = `;
+	{
+		SendInput {+}
+	}
+	else if next = n
+	{
+		SendInput \
+	}
+	else if next = m
+	{
+		SendInput {{}
+	}
+	else if next = ,
+	{
+		SendInput {}}
+	}
+	else if next = .
+	{
+		SendInput ``
+	}
+	else if next = /
+	{
+		SendInput ~
+	}
+}
+Return
+
+
 
 ^g::
 if winApp()
