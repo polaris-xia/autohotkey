@@ -176,7 +176,7 @@ AppsKey & .::SendInput ``
 AppsKey & /::SendInput ~
 
 AppsKey::
-Input, next, L1, ,,,,y,u,i,o,p,h,j,k,l,`;,n,m,.,/
+Input, next, L1, {LControl}{RControl}{LAlt}{RAlt}{LShift}{RShift}{LWin}{RWin}{F1}{F2}{F3}{F4}{F5}{F6}{F7}{F8}{F9}{F10}{F11}{F12}{Left}{Right}{Up}{Down}{Home}{End}{PgUp}{PgDn}{Del}{Ins}{BS}{Capslock}{Numlock}{PrintScreen}{Pause},,,,y,u,i,o,p,h,j,k,l,`;,n,m,.,/
 if ErrorLevel = Match
 {
 	if next = y
