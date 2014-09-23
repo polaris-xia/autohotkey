@@ -34,6 +34,8 @@ Return
 if winApp()
 {
 	SendPlay ^{Left}
+} else {
+	SendPlay !b
 }
 Return
 
@@ -50,6 +52,8 @@ Return
 if winApp()
 {
 	SendPlay ^{Right}
+} else {
+	SendPlay !f
 }
 Return
 
@@ -106,7 +110,7 @@ if winApp()
 {
 	SendPlay ^{BS}
 } else {
-	SendPlay !BS
+	SendPlay !{BS}
 }
 Return
 
@@ -115,6 +119,8 @@ Return
 if winApp()
 {
 	SendPlay ^{Del}
+} else {
+	SendPlay !d
 }
 Return
 
@@ -175,6 +181,7 @@ AppsKey & ,::SendInput {}}
 AppsKey & .::SendInput ``
 AppsKey & /::SendInput ~
 AppsKey & '::SendInput "
+
 AppsKey::
 Input, next, L1, {LControl}{RControl}{LAlt}{RAlt}{LShift}{RShift}{LWin}{RWin}{F1}{F2}{F3}{F4}{F5}{F6}{F7}{F8}{F9}{F10}{F11}{F12}{Left}{Right}{Up}{Down}{Home}{End}{PgUp}{PgDn}{Del}{Ins}{BS}{Capslock}{Numlock}{PrintScreen}{Pause},,,,y,u,i,o,p,h,j,k,l,`;,n,m,.,/,'
 if ErrorLevel = Match
@@ -282,3 +289,15 @@ Return
 #Space::SendPlay ^{Space}
 
 F9::LButton
+
+::brxy::
+(
+Best Regards,
+Xia, Ye
+)
+
+::ooth::
+(
+only_one_truth@hotmail.com
+)
+
